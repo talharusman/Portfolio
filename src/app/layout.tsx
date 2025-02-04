@@ -1,4 +1,5 @@
 import "./globals.css"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Inter } from "next/font/google"
 import Header from "./components/Header"
 
@@ -21,6 +22,7 @@ export default function RootLayout({
           <Header />
           {children}
         </div>
+        <SpeedInsights />
       </body>
     </html>
   )
