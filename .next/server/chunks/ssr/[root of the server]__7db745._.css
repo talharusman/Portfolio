@@ -383,6 +383,14 @@ section {
   }
 }
 
+.status-message {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ffffff1a;
+  color: #0ff;
+}
+
 
 /* [next]/internal/font/google/inter_59dee874.module.css [app-client] (css) */
 @font-face {

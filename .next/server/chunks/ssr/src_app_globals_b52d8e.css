@@ -382,4 +382,12 @@ section {
   }
 }
 
+.status-message {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ffffff1a;
+  color: #0ff;
+}
+
 /*# sourceMappingURL=src_app_globals_b52d8e.css.map*/

@@ -8,35 +8,38 @@ export default function Contact() {
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
   const [method, setMethod] = useState("")
+  const [status, setStatus] = useState("")
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setStatus("Sending...")
 
     if (method === "whatsapp") {
       const whatsappNumber = "923067584773"
       const whatsappMessage = `Hello, my name is ${name}. Email: ${email}. Message: ${message}`
       const whatsappURL = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`
       window.open(whatsappURL, "_blank")
+      setStatus("Message sent via WhatsApp!")
     } else if (method === "email") {
       try {
-        await emailjs.send(
+        const result = await emailjs.send(
           process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
           process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
           {
             from_name: name,
             from_email: email,
             message: message,
-            to_email: "talharusman2004@gmail.com",
           },
           process.env.NEXT_PUBLIC_EMAILJS_USER_ID,
         )
-        alert("Message sent successfully via Gmail!")
+        console.log("EmailJS result:", result)
+        setStatus("Message sent successfully via Gmail!")
       } catch (error) {
         console.error("EmailJS error:", error)
-        alert("Failed to send message. Please try again later.")
+        setStatus("Failed to send message. Please try again later.")
       }
     } else {
-      alert("Please select a valid contact method.")
+      setStatus("Please select a valid contact method.")
     }
   }
 
@@ -83,6 +86,7 @@ export default function Contact() {
             <button type="submit">Send Message</button>
           </div>
         </form>
+        {status && <p className="status-message">{status}</p>}
       </div>
     </section>
   )
