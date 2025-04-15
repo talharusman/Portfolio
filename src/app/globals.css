@@ -358,11 +358,20 @@ section {
 
   .menu-button {
     display: block;
+    z-index: 101;
   }
 
   nav {
     display: none;
-    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    background: #0b1120;
+    padding: 20px;
+    z-index: 100;
+    box-shadow: -2px 0 10px rgba(0, 255, 255, 0.2);
   }
 
   nav.open {
@@ -371,16 +380,30 @@ section {
 
   nav ul {
     flex-direction: column;
+    margin-top: 60px;
+    gap: 10px;
   }
 
   nav li {
-    margin: 10px 0;
+    margin: 5px 0;
+    width: 100%;
   }
 
   nav a {
     display: block;
     width: 100%;
+    padding: 15px;
+    text-align: left;
+    background: linear-gradient(45deg, #00ffff10, #ff00ff15);
+    border-radius: 8px;
   }
+
+  nav a:hover,
+  nav a.active {
+    background: linear-gradient(45deg, #00ffff25, #ff00ff30);
+    box-shadow: 0 0 10px #00ffff40, 0 0 20px #ff00ff40;
+  }
+
   #about {
     width: 100%;
     padding: 15px;

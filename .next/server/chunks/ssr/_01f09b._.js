@@ -33,11 +33,11 @@ function Contact() {
             setStatus("Message sent via WhatsApp!");
         } else if (method === "email") {
             try {
-                const result = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].send(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, {
+                const result = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].send(("TURBOPACK compile-time value", "service_988k3se"), ("TURBOPACK compile-time value", "template_paxq1nh"), {
                     from_name: name,
                     from_email: email,
                     message: message
-                }, process.env.NEXT_PUBLIC_EMAILJS_USER_ID);
+                }, ("TURBOPACK compile-time value", "TeikHez7gfmA0QzbQ"));
                 console.log("EmailJS result:", result);
                 setStatus("Message sent successfully via Gmail!");
             } catch (error) {
